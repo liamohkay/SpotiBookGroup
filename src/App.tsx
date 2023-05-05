@@ -1,11 +1,10 @@
 import React from 'react';
+import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        SpotiBookGroup is under construction!
-      </h1>
+      <Login title={'SpotiBookGroup started construction 5/4/23'}/>
     </div>
   );
 }
