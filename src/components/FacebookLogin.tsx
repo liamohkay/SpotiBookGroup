@@ -10,7 +10,9 @@ const FacebookLogin = () => {
     }
 
     return (
-        <button onClick={handleLogin}>Here is a button</button>
+      <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+        <button onClick={handleLogin} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</button>
+      </div>
     );
 }
 
