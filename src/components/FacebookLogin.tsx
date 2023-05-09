@@ -1,13 +1,18 @@
 import React from 'react';
 
 const FacebookLogin = () => {
-    const handleLogin = () => {
-      window.FB.login(resp => {
+  const handleLogin = () => {
+      window.FB.login(async (resp: any) => {
         if (resp.status === "connected") {
-          console.log(resp.authResponse.accessToken)
+          const response = await fetch(`https://spotibookgroup.vercel.app/api/hello?token=${resp.authResponse.accessToken}`);
+          console.log(response);
         }
+      }, 
+      { 
+        scope: 'public_profile'
       })
     }
+
 
     return (
       <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
@@ -16,4 +21,4 @@ const FacebookLogin = () => {
     );
 }
 
-export default FacebookLogin; 
+export default FacebookLogin;

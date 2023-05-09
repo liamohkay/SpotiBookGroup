@@ -3,7 +3,7 @@ import FacebookLogin from './components/FacebookLogin';
 
 function App() {
  
-  // Trigger facebook login on app load
+  // Initialized faceobok SDK
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({
