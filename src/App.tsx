@@ -1,10 +1,25 @@
-import React from 'react';
-import Login from './components/Login';
+import React, { useEffect } from 'react';
+import FacebookLogin from './components/FacebookLogin';
 
 function App() {
+ 
+  // Trigger facebook login on app load
+  useEffect(() => {
+    window.fbAsyncInit = function() {
+      window.FB.init({
+        appId            : process.env.FACEBOOK_AP_ID,
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v16.0'
+      });
+    };
+  }, [])
+
+
   return (
     <div className="App">
-      <Login title={'SpotiBookGroup started construction 5/4/23'}/>
+      <h1 className="text-center">SpotiBookGroup started construction 5/4/23</h1>
+      <FacebookLogin />
     </div>
   );
 }
