@@ -16,4 +16,4 @@ const FacebookLogin = () => {
     );
 }
 
-export default FacebookLogin;
+export default FacebookLogin; 
